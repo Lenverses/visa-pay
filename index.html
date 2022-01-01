@@ -1,1 +1,15 @@
+<script type="text/javascript" src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js"></script>
 <img alt="Visa Checkout" class="v-button" role="button" src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png">
+function onVisaCheckoutReady() {
+  V.init({
+    apikey: '{{VISA_CHECKOUT_ID}}',
+    paymentRequest:{
+      subtotal: '10.00',
+      currencyCode: 'USD'
+    },
+    settings: {
+      displayName: 'My Website'
+    }
+  });
+}
+onVisaCheckoutReady()
